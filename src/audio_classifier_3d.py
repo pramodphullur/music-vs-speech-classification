@@ -4,7 +4,7 @@
 A deep learning approach to classify audio files using 3D Convolutional Neural Networks
 with spectrogram image representations.
 
-Author: Pramod P Hullur
+Author: Pramod Hullur
 Date: 16-07-2025
 """
 
