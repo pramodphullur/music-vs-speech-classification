@@ -217,19 +217,19 @@ class CNN3DModel:
             layers.Input(shape=self.input_shape),
             
             # First 3D Conv block
-            layers.Conv3D(8, (3, 3, 3), activation='relu', padding='same'),
+            layers.Conv3D(32, (3, 3, 3), activation='relu', padding='same'),
             layers.BatchNormalization(),
             layers.MaxPooling3D((2, 2, 2)),
             layers.Dropout(0.2),
             
             # Second 3D Conv block
-            layers.Conv3D(16, (3, 3, 3), activation='relu', padding='same'),
+            layers.Conv3D(64, (3, 3, 3), activation='relu', padding='same'),
             layers.BatchNormalization(),
             layers.MaxPooling3D((2, 2, 2)),
             layers.Dropout(0.3),
             
             # Third 3D Conv block
-            layers.Conv3D(32, (3, 3, 3), activation='relu', padding='same'),
+            layers.Conv3D(128, (3, 3, 3), activation='relu', padding='same'),
             layers.BatchNormalization(),
             layers.GlobalAveragePooling3D(),
             layers.Dropout(0.4),
@@ -466,7 +466,7 @@ def main():
         # Build and train model
         history = classifier.build_and_train_model(
             X_train, y_train, X_val, y_val, 
-            epochs=20, batch_size=8
+            epochs=10, batch_size=8
         )
         
         # Plot training history
