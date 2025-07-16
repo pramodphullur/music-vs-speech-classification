@@ -1,5 +1,4 @@
 # music-vs-speech-classification
-# 3D CNN Audio Classification: Music vs Speech
 
 A deep learning project that classifies audio files as either music or speech using 3D Convolutional Neural Networks with spectrogram image representations.
 
