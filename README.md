@@ -82,15 +82,7 @@ predicted_class, confidence = predict_new_audio(model, 'path/to/audio.wav')
 - **Test Accuracy**: 50%
 - **Training Issues**: Model shows overfitting with validation accuracy stuck at 47.37%
 
-### Confusion Matrix
-```
-           Predicted
-Actual     Speech  Music
-Speech        0     10
-Music         0     10
-```
-
-## 🔍 Data Processing Pipeline
+## Data Processing Pipeline
 
 1. **Audio Loading**: Load WAV files with librosa at 22050 Hz
 2. **Mel Spectrogram**: Generate mel-scale spectrograms
@@ -134,13 +126,11 @@ audio-classification-3d/
 │   ├── data_preprocessing.py       # Data loading and preprocessing
 │   ├── model_architecture.py       # 3D CNN model definition
 │   └── evaluation.py               # Model evaluation utilities
-├── notebooks/
-│   ├── data_exploration.ipynb      # Data analysis and visualization
-│   └── model_experiments.ipynb     # Model architecture experiments
 ├── models/
 │   └── saved_models/               # Trained model checkpoints
-├── data/
-│   └── dataset/                    # Dataset directory
+├── dataset/
+│   ├── train/                      # .wav formate
+│   └── test/                       # .wav formate
 ├── requirements.txt                # Python dependencies
 ├── README.md                       # This file
 └── LICENSE                         # MIT License
