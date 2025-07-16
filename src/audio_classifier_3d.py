@@ -25,7 +25,7 @@ import cv2
 
 # Configuration
 CONFIG = {
-    'data_dir': "/kaggle/input/music-speech/dataset",
+    'data_dir': "/dataset",
     'target_sr': 22050,
     'batch_size': 4,
     'epochs': 50,
