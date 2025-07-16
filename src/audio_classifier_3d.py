@@ -1,3 +1,13 @@
+"""
+3D CNN Audio Classification: Music vs Speech
+
+A deep learning approach to classify audio files using 3D Convolutional Neural Networks
+with spectrogram image representations.
+
+Author: Pramod P Hullur
+Date: 16-07-2025
+"""
+
 import os
 import librosa
 import matplotlib.cm
@@ -456,7 +466,7 @@ def main():
     tf.random.set_seed(42)
     
     # Initialize classifier
-    data_dir = "/kaggle/input/music-speech/dataset"  # Update this path
+    data_dir = "/dataset"  # Update this path
     classifier = MusicSpeechClassifier(data_dir)
     
     try:
