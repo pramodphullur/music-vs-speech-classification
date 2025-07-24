@@ -211,20 +211,6 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 - Add data augmentation
 - Reduce model complexity
 
-## Performance Optimization
-
-### For Better Results:
-1. **Data Augmentation**: Add time/pitch shifting
-2. **Ensemble Methods**: Combine multiple models
-3. **Hyperparameter Tuning**: Use Optuna or similar
-4. **Advanced Architectures**: Try attention mechanisms
-
-### For Production Deployment:
-1. **Model Quantization**: Reduce model size
-2. **TensorFlow Lite**: Mobile deployment
-3. **TensorFlow Serving**: Server deployment
-4. **ONNX Conversion**: Cross-platform compatibility
-
 ## Contributing
 
 We welcome contributions! Please follow these steps:
@@ -234,19 +220,6 @@ We welcome contributions! Please follow these steps:
 3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
 4. **Push** to the branch (`git push origin feature/amazing-feature`)
 5. **Open** a Pull Request
-
-### Development Setup
-```bash
-# Clone your fork
-git clone https://github.com/yourusername/music-vs-speech-classification.git
-
-# Install development dependencies
-pip install -r requirements.txt
-pip install black flake8 pytest  # Code formatting and testing
-
-# Run tests
-pytest tests/
-```
 
 ## Research & References
 
@@ -295,11 +268,8 @@ If you use this work or build upon our research, please cite our paper:
     publisher={Springer Nature Singapore},
     address={Singapore},
     pages={273--282},
-    isbn={978-981-97-8861-3},
-    doi={10.1007/978-981-97-8861-3_24},
-    url={https://link.springer.com/chapter/10.1007/978-981-97-8861-3_24}
+    isbn={978-981-97-8861-3}
 }
-
 ```
 
 ## License
