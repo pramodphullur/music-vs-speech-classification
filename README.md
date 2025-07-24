@@ -55,7 +55,7 @@ Unlike traditional 2D approaches, our method creates pseudo-3D representations o
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/music-vs-speech-classification.git
+git clone https://github.com/pramodphullur/music-vs-speech-classification.git
 cd music-vs-speech-classification
 
 # Install dependencies
