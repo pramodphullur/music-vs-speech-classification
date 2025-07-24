@@ -64,15 +64,6 @@ pip install -r requirements.txt
 
 ### Step 2: Download Datasets
 
-#### Option A: Using Kaggle CLI (GTZAN)
-```bash
-# Install Kaggle CLI and configure API key
-pip install kaggle
-kaggle datasets download -d andradaolteanu/gtzan-dataset-music-genre-classification
-unzip gtzan-dataset-music-genre-classification.zip
-```
-
-#### Option B: Manual Download
 1. **GTZAN**: Download from [Kaggle link](https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification)
 2. **LibriSpeech**: Download from [OpenSLR](https://www.openslr.org/12) (recommend `dev-clean` for testing)
 
@@ -177,53 +168,6 @@ audio-classification-3d/
 └── LICENSE                         # MIT License
 ```
 
-## Advanced Usage
-
-### Custom Training Parameters
-
-```python
-from music_speech_classifier import MusicSpeechClassifier
-
-classifier = MusicSpeechClassifier("./dataset")
-X_train, X_val, X_test, y_train, y_val, y_test = classifier.prepare_data()
-
-# Custom training
-history = classifier.build_and_train_model(
-    X_train, y_train, X_val, y_val,
-    epochs=150,
-    batch_size=4  # Reduce if memory issues
-)
-```
-
-### Model Evaluation
-
-```python
-# Detailed evaluation
-y_pred, y_pred_proba, accuracy = classifier.evaluate_model(X_test, y_test)
-
-# Load saved model
-classifier.load_model("path/to/saved/model.keras")
-```
-
-### Batch Prediction
-
-```python
-import os
-from pathlib import Path
-
-# Predict on multiple files
-audio_dir = Path("path/to/audio/files")
-results = []
-
-for audio_file in audio_dir.glob("*.wav"):
-    result = classifier.predict_audio_file(audio_file)
-    results.append({
-        'file': audio_file.name,
-        'prediction': result['class'],
-        'confidence': result['confidence']
-    })
-```
-
 ## Troubleshooting
 
 ### Common Issues & Solutions
@@ -304,7 +248,7 @@ pip install black flake8 pytest  # Code formatting and testing
 pytest tests/
 ```
 
-## 📚 Research & References
+## Research & References
 
 ### 📄 Primary Research (Our Work)
 **Main Publication**: 
@@ -320,12 +264,12 @@ pytest tests/
 - Comparative analysis of 2D vs 3D approaches for audio classification
 - Experimental validation on music-speech classification tasks
 
-### 🔗 Related Academic Work
+### Related Academic Work
 - **GTZAN**: Tzanetakis, G., & Cook, P. (2002). Musical genre classification of audio signals. *IEEE Transactions on Speech and Audio Processing*.
 - **LibriSpeech**: Panayotov, V., et al. (2015). Librispeech: an ASR corpus based on public domain audio books. *ICASSP*.
 - **3D CNNs**: Tran, D., et al. (2015). Learning spatiotemporal features with 3D convolutional networks. *ICCV*.
 
-### 📊 Implementation Improvements Over Original Paper
+### Implementation Improvements Over Original Paper
 This codebase includes several enhancements beyond our published work:
 
 1. **Architecture Optimization**: Reduced overfitting through better regularization
@@ -334,7 +278,7 @@ This codebase includes several enhancements beyond our published work:
 4. **Scalability**: Batch processing and model persistence features
 5. **Performance**: Improved accuracy through better preprocessing and training strategies
 
-### 🎓 Citation
+### Citation
 If you use this work or build upon our research, please cite our paper:
 
 ```bibtex
@@ -358,11 +302,11 @@ If you use this work or build upon our research, please cite our paper:
 
 ```
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Springer**: For publishing our research and supporting academic contribution
 - **Research Community**: Colleagues and reviewers who provided valuable feedback on our original paper
@@ -371,13 +315,13 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - **Open Source Community**: TensorFlow, librosa, and other library maintainers
 - **Academic Institutions**: For supporting research and development
 
-### 🌟 Research Impact
+### Research Impact
 Our published work contributes to the growing field of deep learning applications in audio processing, specifically:
 - Novel approaches to spectrogram representation
 - 3D CNN applications beyond video processing
 - Multi-modal audio feature extraction techniques
 
-## 📧 Support & Contact
+## Support & Contact
 
 ### For Research Collaboration
 - **Primary Author**: [ram.hullur.backup@gmail.com](mailto:ram.hullur.backup@gmail.com)
@@ -391,7 +335,7 @@ Our published work contributes to the growing field of deep learning application
 
 ---
 
-### 🌟 Star this repository if our research helped you!
+### Star this repository if our research helped you!
 
 **Research-backed implementation with production-ready improvements**
 
